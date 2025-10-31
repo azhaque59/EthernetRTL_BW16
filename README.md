@@ -1,5 +1,5 @@
 PREAMBLE
-The goal of this wffort is to leverage the 5GHz capability coupled with the cost effectiveness of the BW16 to make a WiFi to Ethernet Bridge.
+The goal of this effort is to leverage the 5GHz capability coupled with the cost effectiveness of the BW16 to make a WiFi to Ethernet Bridge.
 Until recently this dual capability was unavailable in the small microcontrollers in the market
 Secondly, Ethernet.h has gradually improved over time and is now available as Ethernet3.h. This can dovetail seamlessly in the Arduino environment with tweaking for use with the Ameba BW16, thus making it attractive for hobbyists around the world
 
