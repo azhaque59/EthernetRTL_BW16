@@ -1,3 +1,8 @@
+PREAMBLE
+The goal of this wffort is to leverage the 5GHz capability coupled with the cost effectiveness of the BW16 to make a WiFi to Ethernet Bridge.
+Until recently this dual capability was unavailable in the small microcontrollers in the market
+Secondly, Ethernet.h has gradually improved over time and is now available as Ethernet3.h. This can dovetail seamlessly in the Arduino environment with tweaking for use with the Ameba BW16, thus making it attractive for hobbyists around the world
+
 EthernetRTL_BW16
 =================
 
@@ -24,3 +29,8 @@ Roadmap:
 v1.0.0  Compile verified only (this release)
 v1.1.0  Hardware validated (ping verified)
 v1.2.0  Full Wi-Fi ↔ Ethernet bridge
+
+Additional Resources:
+1.https://www.amebaiot.com/en/amebad-bw16-arduino-getting-started/
+2. https://github.com/mikey60/BW16-RTL8720DN-Module-Arduino
+3.https://github.com/ambiot/ambd_arduino/tree/master/Arduino_package
