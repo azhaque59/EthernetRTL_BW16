@@ -8,6 +8,8 @@ EthernetRTL_BW16
 
 Work-in-progress Arduino library for Ai-Thinker BW16 (RTL8720DN) + WIZnet W5500 Ethernet module.
 
+Development is being done using Arduino 1.8.19 plus Ameba sdk 3.1.9
+
 Purpose:
 This library provides a compile-verified stub and driver integration layer for the
 WIZnet ioLibrary_Driver (W5500) adapted to the Realtek Ameba-D / Ai-Thinker BW16 platform.
