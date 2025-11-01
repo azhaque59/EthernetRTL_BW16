@@ -1,79 +1,82 @@
 # EthernetRTL_BW16
 
-## Overview
-**EthernetRTL_BW16** is a proof-of-concept adaptation of the Ethernet3 (W5500) library for the **Realtek BW16 (RTL8720DN / Ameba-D)** platform.  
-It demonstrates compile-time integration and library recognition for SPI-based W5500 Ethernet connectivity on BW16.
+Work-in-progress Arduino library for Ai-Thinker **BW16 (RTL8720DN)** + **WIZnet W5500** Ethernet module.
 
-The project serves as a learning and foundation layer for enabling **wired Ethernet communication** on a primarily Wi-Fi-based SoC.
+This project demonstrates proof-of-concept compilation and setup for using the W5500 with the BW16 platform, built on the Realtek AmebaD SDK and Arduino core.
 
 ---
 
-## Installation
+## ⚙️ Installation
 
-### Folder Structure (Windows)
-Place the extracted folder in your Arduino libraries directory:
-
-```
-C:\Users\HP\Documents\Arduino\libraries\EthernetRTL_BW16\
-│
-├── library.properties
-├── src
-│   ├── EthernetRTL_BW16.h
-│   ├── EthernetRTL_BW16.cpp
-│   ├── ioLibrary_Driver
-│   │   ├── wizchip_conf.h
-│   │   ├── w5500.h
-│   │   └── socket.h
-│   └── examples
-│       └── W5500_TestCompile
-│           └── W5500_TestCompile.ino
-├── README.md
-├── Activity_Log.md
-└── docs
-    └── media
-        └── circuit_image.png
-```
-
-Restart Arduino IDE after installation.
-
----
-
-## Hardware Setup
-
-Reference circuit diagrams:
-- `/docs/media/circuit_image.png`
-- `/docs/media/Schematic_BW16_W5500.pdf`
-
-⚙️ Power the W5500 via 3.3 V from BW16 (or an external regulator if required).  
-Ensure shared **GND** and connect the SPI lines as indicated in the schematic.
-
----
-
-## Usage
-
-1. Open **File → Examples → EthernetRTL_BW16 → W5500_TestCompile**
-2. Compile to confirm proper linkage with `wizchip_conf.h`
-3. Expected serial output:
+1. Download the ZIP file of this repository from GitHub.
+2. Extract the contents into your Arduino libraries directory:
    ```
-   W5500_TestCompile: starting
-   W5500_TestCompile: header linkage OK
+   Documents/
+   └── Arduino/
+       └── libraries/
+           └── EthernetRTL_BW16/
+               ├── library.properties
+               ├── src/
+               │   ├── EthernetRTL_BW16.h
+               │   ├── EthernetRTL_BW16.cpp
+               │   └── ioLibrary_Driver/
+               │       ├── wizchip_conf.h
+               │       ├── w5500.h
+               │       └── socket.h
+               ├── examples/
+               │   └── W5500_TestCompile/
+               │       └── W5500_TestCompile.ino
+               ├── README.md
+               ├── Activity_Log.md
+               └── docs/
+                   └── media/
+                       └── circuit_image.png
    ```
 
----
-
-## Next Steps
-
-- Integrate live SPI transactions and W5500 initialization.
-- Verify hardware-level connectivity (ping test via 2.4 GHz Wi-Fi bridge or LAN).
-- Move toward a hybrid Ethernet/Wi-Fi link mode for Ameba-D.
+3. Restart Arduino IDE.
 
 ---
 
-## License
+## 🧠 Description
 
-Licensed under the **MIT License** — see the LICENSE file for details.
+The library provides a base framework for integrating the **WIZnet W5500** Ethernet controller with the **BW16** (Realtek RTL8720DN) dual-band Wi-Fi + BLE module via SPI.  
+At this stage, the implementation verifies **successful compilation** and **header linkage**, confirming toolchain compatibility.
+
+Hardware testing and network validation will follow.
 
 ---
 
-**Project by:** EthernetRTL Team  
-**Status:** Work in Progress (as of Oct 2025)
+## 🔌 Hardware Setup
+
+Refer to `/docs/media/circuit_image.png` for the wiring diagram.
+
+> The BW16 operates at 3.3 V logic.  
+> Connect the W5500’s SPI interface (SCK, MISO, MOSI, CS) accordingly, and share a common ground.  
+> The module can be powered from the BW16’s 3.3 V pin or a dedicated 3.3 V regulator.
+
+---
+
+## 🧩 Example Sketch
+
+Example: `W5500_TestCompile.ino` (under `/examples/W5500_TestCompile/`)
+
+This sketch confirms library linkage and SPI compile success.
+
+---
+
+## 🗓️ Activity Log
+
+See [`Activity_Log.md`](Activity_Log.md) for project updates, milestones, and planned enhancements.
+
+---
+
+## 📄 License
+
+Released under the [MIT License](LICENSE).
+
+---
+
+## 🚀 Status
+
+**Stage:** Proof of Concept  
+**Next steps:** Hardware verification, TCP/IP test, Ethernet3_BW16 integration, and PCB layout preparation.
