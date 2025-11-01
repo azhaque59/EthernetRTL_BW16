@@ -1,38 +1,79 @@
-PREAMBLE
-The goal of this effort is to leverage the 5GHz capability coupled with the cost effectiveness of the BW16 to make a WiFi to Ethernet Bridge.
-Until recently this dual capability was unavailable in the small microcontrollers in the market
-Secondly, Ethernet.h has gradually improved over time and is now available as Ethernet3.h. This can dovetail seamlessly in the Arduino environment with tweaking for use with the Ameba BW16, thus making it attractive for hobbyists around the world
+# EthernetRTL_BW16
 
-EthernetRTL_BW16
-=================
+## Overview
+**EthernetRTL_BW16** is a proof-of-concept adaptation of the Ethernet3 (W5500) library for the **Realtek BW16 (RTL8720DN / Ameba-D)** platform.  
+It demonstrates compile-time integration and library recognition for SPI-based W5500 Ethernet connectivity on BW16.
 
-Work-in-progress Arduino library for Ai-Thinker BW16 (RTL8720DN) + WIZnet W5500 Ethernet module.
+The project serves as a learning and foundation layer for enabling **wired Ethernet communication** on a primarily Wi-Fi-based SoC.
 
-Development is being done using Arduino 1.8.19 plus Ameba sdk 3.1.9
+---
 
-Purpose:
-This library provides a compile-verified stub and driver integration layer for the
-WIZnet ioLibrary_Driver (W5500) adapted to the Realtek Ameba-D / Ai-Thinker BW16 platform.
+## Installation
 
-Version 1.0.0: Compilation verified only (no hardware test yet).
+### Folder Structure (Windows)
+Place the extracted folder in your Arduino libraries directory:
 
-Installation:
-1. Extract this folder into Documents\Arduino\libraries\EthernetRTL_BW16
-2. Restart Arduino IDE.
-3. Open File -> Examples -> EthernetRTL_BW16 -> W5500_TestCompile
-4. Compile to verify successful header linkage.
+```
+C:\Users\HP\Documents\Arduino\libraries\EthernetRTL_BW16\
+│
+├── library.properties
+├── src
+│   ├── EthernetRTL_BW16.h
+│   ├── EthernetRTL_BW16.cpp
+│   ├── ioLibrary_Driver
+│   │   ├── wizchip_conf.h
+│   │   ├── w5500.h
+│   │   └── socket.h
+│   └── examples
+│       └── W5500_TestCompile
+│           └── W5500_TestCompile.ino
+├── README.md
+├── Activity_Log.md
+└── docs
+    └── media
+        └── circuit_image.png
+```
 
-Next Steps (To DO):
-- Connect BW16 to W5500 via SPI.
-- Validate link and test basic ping.
-- Publish schematic and hardware setup.
+Restart Arduino IDE after installation.
 
-Roadmap:
-v1.0.0  Compile verified only (this release)
-v1.1.0  Hardware validated (ping verified)
-v1.2.0  Full Wi-Fi ↔ Ethernet bridge
+---
 
-Additional Resources:
-1.https://www.amebaiot.com/en/amebad-bw16-arduino-getting-started/
-2. https://github.com/mikey60/BW16-RTL8720DN-Module-Arduino
-3.https://github.com/ambiot/ambd_arduino/tree/master/Arduino_package
+## Hardware Setup
+
+Reference circuit diagrams:
+- `/docs/media/circuit_image.png`
+- `/docs/media/Schematic_BW16_W5500.pdf`
+
+⚙️ Power the W5500 via 3.3 V from BW16 (or an external regulator if required).  
+Ensure shared **GND** and connect the SPI lines as indicated in the schematic.
+
+---
+
+## Usage
+
+1. Open **File → Examples → EthernetRTL_BW16 → W5500_TestCompile**
+2. Compile to confirm proper linkage with `wizchip_conf.h`
+3. Expected serial output:
+   ```
+   W5500_TestCompile: starting
+   W5500_TestCompile: header linkage OK
+   ```
+
+---
+
+## Next Steps
+
+- Integrate live SPI transactions and W5500 initialization.
+- Verify hardware-level connectivity (ping test via 2.4 GHz Wi-Fi bridge or LAN).
+- Move toward a hybrid Ethernet/Wi-Fi link mode for Ameba-D.
+
+---
+
+## License
+
+Licensed under the **MIT License** — see the LICENSE file for details.
+
+---
+
+**Project by:** EthernetRTL Team  
+**Status:** Work in Progress (as of Oct 2025)
