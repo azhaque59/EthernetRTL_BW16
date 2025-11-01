@@ -49,8 +49,6 @@ Hardware testing and network validation will follow.
 
 ## 🔌 Hardware Setup
 
-## 🔌 Hardware Setup
-
 ⚠️ **Note of Caution**  
 **BW16 module variants may differ in pin labeling or SPI pin mapping** (particularly MOSI, MISO, SCK, and CS).  
 Always verify your specific board’s pinout from the manufacturer’s datasheet or silkscreen before wiring.  
