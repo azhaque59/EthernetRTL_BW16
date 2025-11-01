@@ -31,7 +31,8 @@ This project demonstrates proof-of-concept compilation and setup for using the W
                └── docs/
                    └── media/
                        └── circuit_image.png
-   ```
+   
+   ``
 
 3. Restart Arduino IDE.
 
@@ -47,6 +48,19 @@ Hardware testing and network validation will follow.
 ---
 
 ## 🔌 Hardware Setup
+
+## 🔌 Hardware Setup
+
+⚠️ **Note of Caution**  
+**BW16 module variants may differ in pin labeling or SPI pin mapping** (particularly MOSI, MISO, SCK, and CS).  
+Always verify your specific board’s pinout from the manufacturer’s datasheet or silkscreen before wiring.  
+Incorrect connections can prevent SPI communication or, in rare cases, damage the W5500 or BW16.
+
+Refer to `/docs/media/circuit_image.png` for the wiring diagram.
+
+> The BW16 operates at 3.3 V logic.  
+> Connect the W5500’s SPI interface (SCK, MISO, MOSI, CS) accordingly, and share a common ground.  
+> The module can be powered from the BW16’s 3.3 V pin or a dedicated 3.3 V regulator.
 
 Refer to `/docs/media/circuit_image.png` for the wiring diagram.
 
