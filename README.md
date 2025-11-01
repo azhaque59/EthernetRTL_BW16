@@ -26,11 +26,6 @@ This project demonstrates proof-of-concept compilation and setup for using the W
                ├── examples/
                │   └── W5500_TestCompile/
                │       └── W5500_TestCompile.ino
-               ├── README.md
-               ├── Activity_Log.md
-               └── docs/
-                   └── media/
-                       └── circuit_image.png
    
    ``
 
