@@ -82,7 +82,6 @@ Some BW16 modules need small edits there for SPI to function correctly.
 For now, this project assumes that your module’s default AmebaD mapping is compatible.
 If SPI activity appears on the wrong pins, revisit this section for correction.
 
-Would you like me to give you a shorter “footnote version” too (for use on the schematic or circuit PNG)?
 
 ## 🧩 Example Sketch
 
