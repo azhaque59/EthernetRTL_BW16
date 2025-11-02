@@ -6,8 +6,7 @@
 - Next steps (scheduled for **3 Nov**):  
   - Upload **Blink.ino** to confirm firmware communication.  
   - Connect SPI lines to W5500 for Ethernet validation.  
-- Reference image:  
-  ![Breadboard Setup](docs/media/Breadboard.png)
+- Breadboard photo in docs/media/ as Breadboard.png
 
 
 
