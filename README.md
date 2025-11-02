@@ -62,6 +62,27 @@ Refer to `/docs/media/circuit_image.png` for the wiring diagram.
 > The module can be powered from the BW16’s 3.3 V pin or a dedicated 3.3 V regulator.
 
 ---
+⚙️ Firmware / Variant Note
+
+⚠️ Important:
+The BW16 module exists in several hardware and firmware variants, and not all of them use the same Arduino pin mapping.
+If you find that SPI communication (MOSI, MISO, SCK, or CS) does not behave as expected when connecting the W5500 module, your Realtek AmebaD “variant.cpp” file may require remapping.
+
+Details and a working example can be found in Mikey’s BW16 repository:
+https://github.com/mikey60/BW16-RTL8720DN-Module-Arduino
+
+In short, the variant.cpp file located in
+
+C:\Users\<your_user>\AppData\Local\Arduino15\packages\realtek\hardware\AmebaD\<version>\variants\rtl8721d\
+
+
+defines the Arduino-to-hardware pin mappings.
+Some BW16 modules need small edits there for SPI to function correctly.
+
+For now, this project assumes that your module’s default AmebaD mapping is compatible.
+If SPI activity appears on the wrong pins, revisit this section for correction.
+
+Would you like me to give you a shorter “footnote version” too (for use on the schematic or circuit PNG)?
 
 ## 🧩 Example Sketch
 
